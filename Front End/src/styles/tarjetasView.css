@@ -1,0 +1,111 @@
+/* ------------------- */
+/* SECCIÓN TARJETAS */
+/* ------------------- */
+
+.tarjetas-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.tarjetas-section h2 {
+  font-size: 2.5rem;
+  color: var(--color-text);
+  letter-spacing: 1px;
+  margin-bottom: 4rem;
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+}
+
+/* ------------------- */
+/* WRAPPER GRID */
+/* ------------------- */
+
+.tarjetas-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
+  gap: 2rem;
+}
+
+/* ------------------- */
+/* TARJETA INDIVIDUAL */
+/* ------------------- */
+
+.tarjeta {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 550px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  background: var(--color-accent);
+}
+
+.tarjeta:hover,
+.tarjeta:focus {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px var(--color-shadow);
+  outline: none;
+}
+
+/* Imagen */
+.tarjeta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover .tarjeta-img,
+.tarjeta:focus .tarjeta-img {
+  transform: scale(1.05);
+}
+
+/* Overlay dinámico según tema */
+.tarjeta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+.tarjeta:hover::before,
+.tarjeta:focus::before {
+  background: rgba(0,0,0,0.1);
+}
+
+/* Título de la tarjeta */
+.tarjeta-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;;
+  pointer-events: none;
+  z-index: 2;
+  text-shadow:
+    0 2px 4px rgba(0,0,0,0.4),
+    0 4px 8px rgba(0,0,0,0.3),
+    0 6px 12px rgba(0,0,0,0.2);
+  transition: text-shadow 0.3s ease;
+}
+
+/* Opcional: aumentar contraste al hover */
+.tarjeta:hover .tarjeta-title,
+.tarjeta:focus .tarjeta-title {
+  text-shadow:
+    0 2px 6px rgba(0,0,0,0.6),
+    0 4px 12px rgba(0,0,0,0.4),
+    0 8px 20px rgba(0,0,0,0.3);
+}

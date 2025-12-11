@@ -1,0 +1,339 @@
+  /* ...existing code... */
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.franja {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: #fff;
+  overflow: hidden;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.franja .texto {
+  display: flex;
+  gap: 150px;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: mover 25s linear infinite;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+@keyframes mover {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+body.tema-oscuro .franja {
+  background: #fff;
+  color: #111;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-background);
+  padding: 0 0;
+  min-height: 60px;
+  width: 100%;
+}
+
+.logo-categorias {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.logo img {
+  height: 60px;
+  display: block;
+  margin-top: 0;
+  transition: transform 0.3s ease;
+  transform: scale(1.3);
+}
+.logo img:hover {
+  transform: scale(1.2);
+}
+
+body.tema-oscuro .logo img {
+  filter: invert(1) brightness(2);
+  transition: filter 0.3s;
+}
+
+.nav-categorias {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+.nav-categorias li a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-categorias li a:hover {
+  color: var(--color-hover);
+  transform: scale(1.1);
+}
+
+.iconos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Perfil text links (INGRESAR / MI CUENTA) -- inline text, vertically centered with icons */
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.perfil .perfil-cuenta,
+.perfil .perfil-cuenta,
+.perfil .perfil-ingresar {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  height: 40px; /* align visually with icon padding */
+  line-height: 1;
+  text-decoration: none;
+}
+
+.perfil .perfil-cuenta:hover,
+.perfil .perfil-ingresar:hover {
+  color: var(--color-hover);
+  text-decoration: none; /* no underline */
+}
+.iconos a {
+  color: var(--color-text);
+  font-size: 1.4rem;
+  padding: 15px;
+  border-radius: 50%;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.iconos a:hover {
+  color: var(--color-hover);
+  transform: scale(1.2);
+}
+
+.iconos a i {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-background);
+  padding: 20px 0;
+  min-width: 380px;
+  max-width: 520px;
+  z-index: 100;
+  border-radius: 0 0 10px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-categorias li {
+  position: relative;
+}
+
+.nav-categorias li:hover > .submenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.submenu li {
+  list-style: none;
+}
+
+.submenu li a {
+  display: block;
+  padding: 14px 24px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  font-weight: 500;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.submenu li a:hover {
+  color: var(--color-hover);
+  transform: scale(1.1);
+}
+
+.tema-toggle-icon {
+  color: var(--color-text);
+  font-size: 1.4rem;
+  padding: 15px;
+  border-radius: 50%;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tema-toggle-icon:hover {
+  color: var(--color-hover);
+  transform: scale(1.2);
+}
+
+/* Contenedor del carrito */
+.carrito {
+  position: relative;
+}
+
+/* Submenu desplegable */
+.carrito-submenu {
+  position: absolute;
+  top: 100%;
+  right: 0; /* referencia al icono */
+  left: auto;
+  background: var(--color-background);
+  border-radius: 0 0 10px 10px;
+  min-width: 280px; /* más ancho para nombres largos */
+  max-height: 400px; /* opcional, scroll si hay muchos productos */
+  overflow-y: auto;
+  z-index: 100;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.carrito:hover .carrito-submenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Cada producto en el carrito */
+.carrito-submenu .carrito-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+/* Imagen del producto */
+.carrito-submenu .carrito-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Info del producto (nombre y precio) */
+.carrito-submenu .carrito-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.carrito-submenu .carrito-item-info .nombre {
+  font-size: 14px;
+}
+
+.carrito-submenu .carrito-item-info .precio {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Contenedor de cantidad y botones + / - */
+.carrito-submenu .carrito-item-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.carrito-submenu .carrito-item-cantidad button.btn-cantidad {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  padding: 2px 5px;
+  transition: color 0.2s ease;
+}
+
+.carrito-submenu .carrito-item-cantidad button.btn-cantidad:hover {
+  color: var(--color-hover);
+}
+
+/* Cantidad del producto */
+.carrito-submenu .carrito-item-cantidad span {
+  min-width: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Número del carrito sobre el icono */
+.carrito-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.carrito-icon .carrito-count {
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #111;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  z-index: 2;
+  transition: color 0.3s;
+}
+
+body.tema-oscuro .carrito-icon .carrito-count {
+  color: #fff;
+}

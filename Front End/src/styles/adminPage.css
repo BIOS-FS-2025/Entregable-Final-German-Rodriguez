@@ -1,0 +1,216 @@
+/* ==================== BODY Y PAGE ==================== */
+.admin-page {
+  background: linear-gradient(135deg, #eff2f5 0%, #dce4eb 100%);
+  min-height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  padding: 48px 16px;
+}
+
+body.tema-oscuro .admin-page {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a24 100%);
+}
+
+/* ==================== TARJETA PRINCIPAL ==================== */
+.admin-card {
+  width: 100%;
+  max-width: 1800px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+body.tema-oscuro .admin-card {
+  background: #1e1e1e;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ==================== SALUDO ==================== */
+.admin-welcome {
+  text-align: center;
+}
+
+.admin-welcome h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+body.tema-oscuro .admin-welcome h1 {
+  color: #e2e8f0;
+}
+
+/* ==================== WRAPPER TABLAS ==================== */
+.tables-wrapper {
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ==================== CADA SECCIÓN ==================== */
+.admin-section {
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+body.tema-oscuro .admin-section {
+  background: #2d2d3d;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.admin-section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+body.tema-oscuro .admin-section h2 {
+  color: #e2e8f0;
+}
+
+/* ==================== TABLAS ==================== */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #1e293b;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+body.tema-oscuro .admin-table th,
+body.tema-oscuro .admin-table td {
+  color: #e2e8f0;
+  border-bottom: 1px solid #333333;
+}
+
+.admin-table th {
+  background: #e2e8f0;
+  font-weight: 600;
+}
+
+body.tema-oscuro .admin-table th {
+  background: #3a3a4a;
+}
+
+.admin-table tr:hover {
+  background: #eff6ff;
+}
+
+body.tema-oscuro .admin-table tr:hover {
+  background: #3a3a4a;
+}
+
+/* ==================== BOTONES ÍCONOS ==================== */
+.btn-edit,
+.btn-delete {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  max-width: 36px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  background: transparent;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-edit {
+  color: #3b82f6;
+}
+
+.btn-edit:hover {
+  color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-delete {
+  color: #ef4444;
+}
+
+.btn-delete:hover {
+  color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Contenedor de acciones */
+.actions-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  flex-wrap: nowrap;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1440px) {
+  .tables-wrapper {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tables-wrapper {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .admin-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 24px 16px;
+  }
+
+  .admin-welcome h1 {
+    font-size: 1.5rem;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    font-size: 1rem;
+    padding: 4px 6px;
+  }
+}

@@ -1,0 +1,28 @@
+.delivery-wrapper {
+  background-color: var(--color-accent);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.delivery-banner {
+  background-color: var(--color-accent-inverse);
+  color: var(--color-text-inverse);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.delivery-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.delivery-banner h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+}

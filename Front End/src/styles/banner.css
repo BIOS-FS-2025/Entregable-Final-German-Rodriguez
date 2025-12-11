@@ -1,0 +1,96 @@
+.banner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 865px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../sources/Banner\ Horizontal\ Promoción\ Tienda\ Online\ Moderno\ Elegante\ Marrón\,\ Beis\ y\ Blanco.png') center center/cover no-repeat;
+  z-index: 0;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+body.tema-oscuro .banner::before {
+  opacity: 0;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../sources/THE-LINE-WINTER.jpg') center center/cover no-repeat;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+body.tema-oscuro .banner::after {
+  opacity: 1;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 40px 30px;
+  border-radius: 16px;
+}
+
+.banner-content h1 {
+  font-size: 4rem;
+  margin-bottom: 50px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 20px rgba(0,0,0,1);
+}
+
+.banner-content p {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 80px;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.banner-btn {
+  display: inline-block;
+  padding: 14px 38px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.banner-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+body.tema-oscuro .banner-btn:hover {
+  color: #000;
+}

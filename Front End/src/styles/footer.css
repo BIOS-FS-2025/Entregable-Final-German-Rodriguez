@@ -1,0 +1,123 @@
+.footer-section ul li svg {
+  margin-right: 14px;
+}
+.payment-icons svg {
+  font-size: 45px;
+  color: #fff;
+  transition: transform 0.3s;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px 20px 20px;
+}
+
+ .footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+  text-align: left;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 5px;
+  text-align: left;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-section ul li i {
+  margin-right: 18px;
+  color: #fff;
+  min-width: 24px;
+  line-height: 1.5;
+}
+
+.payment-icons i {
+  font-size: 60px;
+  margin-right: 20px;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.payment-icons i:hover {
+  transform: scale(1.2);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 200px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li.wpp:hover i {
+  color: #25D366;
+}
+
+.footer-section ul li.ig:hover i {
+  background-image: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.footer-section ul li.gm:hover i {
+  color: #EA4335;
+}
+
+.footer-bottom {
+  border-top: 1px solid #555;
+  padding-top: 15px;
+  margin-top: 30px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom .copyright {
+  display: inline;
+}
+
+.footer-bottom span {
+  display: inline;
+  margin-right: 8px;
+}
+
+.footer-bottom a.gerdev-link {
+  display: inline;
+  text-decoration: none;
+  color: #fff;
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.footer-bottom a.gerdev-link:hover {
+  color: #1abc9c;
+}
