@@ -4,6 +4,10 @@
 
 Mi proyecto final es una app de una tienda online (**eCommerce**) desarrollada con React (Frontend) y Node.js/Express (Backend), con MongoDB como base de datos. Incluye sistema de autenticación con JWT, CRUD completo de productos, carrito interactivo y rutas protegidas.
 
+## 🖇️ Link del video en YouTube
+
+https://www.youtube.com/watch?v=AeDbbIxidrI
+
 ## 📦 Instalación
 
 ### Backend
